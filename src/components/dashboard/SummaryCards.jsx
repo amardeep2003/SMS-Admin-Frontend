@@ -1,47 +1,43 @@
 import {
   FaUserGraduate,
   FaBookOpen,
-  FaMoneyBillWave,
+  FaIndianRupeeSign,
   FaClipboardList,
-} from "react-icons/fa";
+} from "react-icons/fa6";
 
 function SummaryCards({ overview, revenue }) {
   const cards = [
     {
-      title: "Students",
-      icon: <FaUserGraduate size={30} />,
-      color: "primary",
+      title: "Total Students",
+      icon: <FaUserGraduate />,
+      value: overview?.students?.total || 0,
       vt: overview?.students?.vt || 0,
       lt: overview?.students?.lt || 0,
-      total: overview?.students?.total || 0,
+      bg: "primary-card",
     },
-
     {
       title: "Active Courses",
-      icon: <FaBookOpen size={30} />,
-      color: "success",
+      icon: <FaBookOpen />,
+      value: overview?.activeCourses?.total || 0,
       vt: overview?.activeCourses?.vt || 0,
       lt: overview?.activeCourses?.lt || 0,
-      total: overview?.activeCourses?.total || 0,
+      bg: "success-card",
     },
-
     {
       title: "Revenue",
-      icon: <FaMoneyBillWave size={30} />,
-      color: "warning",
-      vt: revenue?.vt?.totalRevenue || 0,
-      lt: revenue?.lt?.totalRevenue || 0,
-      total: revenue?.grandTotalRevenue || 0,
-      isCurrency: true,
+      icon: <FaIndianRupeeSign />,
+      value: `₹${revenue?.grandTotalRevenue || 0}`,
+      vt: `₹${revenue?.vt?.totalRevenue || 0}`,
+      lt: `₹${revenue?.lt?.totalRevenue || 0}`,
+      bg: "warning-card",
     },
-
     {
       title: "Enrollments",
-      icon: <FaClipboardList size={30} />,
-      color: "danger",
+      icon: <FaClipboardList />,
+      value: revenue?.grandTotalEnrollments || 0,
       vt: revenue?.vt?.totalEnrollments || 0,
       lt: revenue?.lt?.totalEnrollments || 0,
-      total: revenue?.grandTotalEnrollments || 0,
+      bg: "danger-card",
     },
   ];
 
@@ -49,29 +45,23 @@ function SummaryCards({ overview, revenue }) {
     <div className="row g-4 mb-4">
       {cards.map((card, index) => (
         <div className="col-lg-3 col-md-6" key={index}>
-          <div className={`card border-0 shadow h-100`}>
-            <div className="card-body">
-              <div className="d-flex justify-content-between align-items-center mb-3">
-                <h5>{card.title}</h5>
+          <div className={`summary-card ${card.bg}`}>
+            <div className="summary-top">
+              <div>
+                <small>{card.title}</small>
 
-                <div className={`text-${card.color}`}>{card.icon}</div>
+                <h3>{card.value}</h3>
               </div>
 
-              <hr />
-
-              <div className="mb-2">
-                <strong>VT :</strong>{" "}
-                {card.isCurrency ? `₹${card.vt}` : card.vt}
+              <div className="summary-icon">
+                {card.icon}
               </div>
+            </div>
 
-              <div className="mb-2">
-                <strong>LT :</strong>{" "}
-                {card.isCurrency ? `₹${card.lt}` : card.lt}
-              </div>
+            <div className="summary-footer">
+              <span>VT : {card.vt}</span>
 
-              <div className="fw-bold fs-5 text-success">
-                Total : {card.isCurrency ? ` ₹${card.total}` : card.total}
-              </div>
+              <span>LT : {card.lt}</span>
             </div>
           </div>
         </div>

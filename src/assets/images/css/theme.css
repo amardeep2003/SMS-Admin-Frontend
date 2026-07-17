@@ -1,0 +1,59 @@
+/* :root{
+
+    --primary:#15d6b5;
+    --primary-dark:#083c3f;
+
+    --secondary:#ffd54f;
+
+    --dark:#062b2e;
+
+    --light:#f5f8fb;
+
+    --white:#ffffff;
+
+    --success:#22c55e;
+
+    --danger:#ef4444;
+
+    --warning:#f59e0b;
+
+    --text:#1e293b;
+
+    --border:#e5e7eb;
+
+    --shadow:0 5px 18px rgba(0,0,0,.08);
+
+    --radius:14px;
+
+} */
+
+:root {
+  /* Brand Colors */
+
+  --primary: #18d6b5;
+  --primary-hover: #11c4a5;
+
+  --dark: #083b3e;
+  --dark-2: #062c2f;
+
+  --secondary: #ffd54f;
+
+  --success: #22c55e;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+
+  --white: #ffffff;
+
+  --bg: #f5f7fb;
+
+  --border: #e6ebf1;
+
+  --text: #1f2937;
+  --text-light: #64748b;
+
+  --radius: 14px;
+
+  --shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  --transition: 0.3s;
+}

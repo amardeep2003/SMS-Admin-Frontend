@@ -1,0 +1,579 @@
+/* body {
+  background: var(--light);
+
+  font-family:
+    Segoe UI,
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.sidebar {
+  width: 260px;
+
+  height: 100vh;
+
+  background: var(--dark);
+
+  position: fixed;
+
+  left: 0;
+
+  top: 0;
+
+  overflow: auto;
+
+  color: #fff;
+
+  transition: 0.3s;
+}
+
+.main {
+  margin-left: 260px;
+
+  min-height: 100vh;
+
+  background: var(--light);
+}
+
+.header {
+  height: 75px;
+
+  background: white;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 0 25px;
+
+  box-shadow: var(--shadow);
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+}
+
+.page {
+  padding: 25px;
+}
+
+.card-box {
+  background: white;
+
+  border-radius: 15px;
+
+  box-shadow: var(--shadow);
+
+  padding: 20px;
+
+  height: 100%;
+}
+
+.logo {
+  height: 55px;
+
+  object-fit: contain;
+}
+
+.sidebar-menu {
+  margin-top: 40px;
+}
+
+.sidebar-menu a {
+  display: block;
+
+  padding: 13px 20px;
+
+  color: white;
+
+  border-radius: 10px;
+
+  margin: 5px 12px;
+
+  font-weight: 500;
+
+  transition: 0.3s;
+}
+
+.sidebar-menu a:hover {
+  background: var(--primary);
+
+  color: white;
+}
+
+.sidebar-menu .active {
+  background: var(--primary);
+}
+
+.search-box {
+  width: 380px;
+}
+
+.search-box input {
+  border-radius: 30px;
+}
+
+@media (max-width: 991px) {
+  .sidebar {
+    left: -260px;
+  }
+
+  .main {
+    margin-left: 0;
+  }
+} */
+
+body {
+  background: var(--bg);
+
+  color: var(--text);
+
+  font-family:
+    Segoe UI,
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Sidebar */
+
+.sidebar {
+  width: 260px;
+
+  height: 100vh;
+
+  background: var(--dark);
+
+  position: fixed;
+
+  left: 0;
+
+  top: 0;
+
+  color: white;
+
+  transition: 0.3s;
+
+  overflow: auto;
+
+  z-index: 1000;
+}
+
+/* Main */
+
+.main {
+  margin-left: 260px;
+
+  min-height: 100vh;
+}
+
+/* Header */
+
+.header {
+  height: 75px;
+
+  background: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 25px;
+
+  box-shadow: var(--shadow);
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 999;
+}
+
+/* Content */
+
+.page {
+  padding: 25px;
+}
+
+/* Cards */
+
+.card-box {
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 28px;
+
+  box-shadow: var(--shadow);
+
+  margin-bottom:30px;
+}
+
+/* Logo */
+
+.logo {
+  height: 52px;
+}
+
+/* Search */
+
+.search-box {
+  width: 420px;
+}
+
+.search-box input {
+  border-radius: 30px;
+
+  border: 1px solid var(--border);
+}
+
+/* Responsive */
+
+@media (max-width: 991px) {
+  .sidebar {
+    left: -260px;
+  }
+
+  .main {
+    margin-left: 0;
+  }
+
+  .search-box {
+    display: none;
+  }
+}
+
+/* Sidebar Links */
+
+.sidebar-link {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 14px 20px;
+
+  margin: 8px 15px;
+
+  border-radius: 12px;
+
+  color: white;
+
+  transition: 0.3s;
+
+  font-weight: 500;
+}
+
+.sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+
+  color: white;
+}
+
+.sidebar-link.active {
+  background: var(--primary);
+
+  color: var(--dark);
+
+  font-weight: 700;
+}
+
+.icon {
+  font-size: 18px;
+}
+
+/* Logout */
+
+.logout-btn {
+  border: none;
+
+  padding: 12px;
+
+  border-radius: 12px;
+
+  background: #ef4444;
+
+  color: white;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.menu-btn {
+  border: none;
+
+  background: white;
+
+  width: 45px;
+
+  height: 45px;
+
+  border-radius: 12px;
+
+  box-shadow: var(--shadow);
+}
+
+.header-icon {
+  border: none;
+
+  background: white;
+
+  width: 45px;
+
+  height: 45px;
+
+  border-radius: 50%;
+
+  box-shadow: var(--shadow);
+
+  position: relative;
+}
+
+.notify-dot {
+  position: absolute;
+
+  top: 10px;
+
+  right: 10px;
+
+  width: 8px;
+
+  height: 8px;
+
+  background: red;
+
+  border-radius: 50%;
+}
+
+.search-icon {
+  position: absolute;
+
+  top: 50%;
+
+  left: 18px;
+
+  transform: translateY(-50%);
+
+  color: gray;
+}
+
+.profile-circle {
+  width: 45px;
+
+  height: 45px;
+
+  background: var(--primary);
+
+  color: var(--dark);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-weight: bold;
+
+  font-size: 18px;
+}
+
+/* =========================
+SUMMARY CARDS
+========================= */
+
+.summary-card {
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 22px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+
+  height: 100%;
+
+  cursor: pointer;
+}
+
+.summary-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.summary-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 18px;
+}
+
+.summary-top small {
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+.summary-top h3 {
+  font-size: 30px;
+
+  font-weight: 700;
+
+  margin-top: 8px;
+}
+
+.summary-icon {
+  width: 60px;
+
+  height: 60px;
+
+  border-radius: 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 24px;
+
+  color: white;
+}
+
+.summary-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  font-weight: 600;
+
+  font-size: 14px;
+}
+
+.primary-card .summary-icon {
+  background: #14b8a6;
+}
+
+.success-card .summary-icon {
+  background: #22c55e;
+}
+
+.warning-card .summary-icon {
+  background: #f59e0b;
+}
+
+.danger-card .summary-icon {
+  background: #ef4444;
+}
+
+/* Revenue Chart */
+
+.year-dropdown {
+  width: 120px;
+
+  border-radius: 10px;
+}
+
+.card-box {
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 25px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  margin-bottom: 25px;
+}
+
+/* =============================
+TABLE
+============================= */
+
+.table thead {
+  background:#ecfdf5;
+}
+
+.table thead th {
+  font-weight: 700;
+
+  color: #0f172a;
+
+  border-bottom: none;
+}
+
+.table tbody tr {
+  transition: 0.25s;
+}
+
+.table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+/* Welcome Banner */
+
+.welcome-banner {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  background: linear-gradient(135deg, #083b3e, #18d6b5);
+
+  color: white;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-banner h2 {
+  font-weight: 700;
+
+  margin-bottom: 10px;
+}
+
+.welcome-logo {
+  font-size: 60px;
+}
