@@ -1,0 +1,564 @@
+.login-page{
+    min-height:100vh;
+    display:flex;
+    background:#f8fafc;
+}
+
+.login-left{
+    width:45%;
+    background:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px;
+}
+
+.login-right{
+    width:55%;
+    background:linear-gradient(135deg,#083B3E,#18D6B5);
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px;
+}
+
+.login-box{
+    width:100%;
+    max-width:470px;
+}
+
+/* .company-logo{
+    height:60px;
+    margin-bottom:50px;
+} */
+
+
+.company-logo{
+    height:65px;
+    width:auto;
+    object-fit:contain;
+}
+/* .company-name{
+    height:45px;
+    margin-left:12px;
+} */
+
+.company-name{
+    height:34px;
+    width:auto;
+    object-fit:contain;
+}
+
+/* .company-header{
+    display:flex;
+    align-items:center;
+    margin-bottom:50px;
+    justify-content: start;
+    align-content: center;
+
+} */
+
+.company-header{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-bottom:55px;
+}
+
+.login-title{
+    font-size:38px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+/* .login-subtitle{
+    color:#666;
+    margin-bottom:35px;
+} */
+
+.login-subtitle{
+    color:rgba(255,255,255,.82);
+    font-size:16px;
+    margin-bottom:35px;
+}
+
+/* .form-control{
+    height:55px;
+    border-radius:12px;
+} */
+
+.form-control{
+
+height:58px;
+
+font-size:15px;
+
+}
+
+.login-box{
+
+animation:slideIn .7s ease;
+
+}
+
+@keyframes slideIn{
+
+from{
+
+opacity:0;
+
+transform:translateX(-40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+.btn-login{
+    height:55px;
+    background:#083B3E;
+    color:#fff;
+    border:none;
+    border-radius:12px;
+    font-weight:600;
+}
+
+.btn-login:hover{
+    background:#0b5257;
+}
+
+/* .right-title{
+    font-size:55px;
+    font-weight:700;
+    line-height:1.2;
+    margin-bottom:25px;
+} */
+ .right-title{
+
+font-size:64px;
+
+font-weight:800;
+
+line-height:1.1;
+
+margin-bottom:28px;
+
+color:#1F2937;
+
+}
+
+
+/* .right-desc{
+    font-size:20px;
+    opacity:.95;
+    line-height:1.7;
+    margin-bottom:50px;
+} */
+
+.right-desc{
+
+font-size:20px;
+
+line-height:1.9;
+
+color:#4B5563;
+
+margin-bottom:55px;
+
+}
+
+/* .review{
+    display:flex;
+    align-items:center;
+    gap:18px;
+} */
+
+.review{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+padding:22px;
+
+width:340px;
+
+border-radius:16px;
+
+background:white;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+border:1px solid #edf2f7;
+
+}
+
+/* .review img{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+} */
+
+.review img{
+
+width:72px;
+
+height:72px;
+
+border-radius:50%;
+
+border:4px solid #18D6B5;
+
+}
+
+/* .review-name{
+    font-size:22px;
+    font-weight:600;
+} */
+
+.review-name{
+
+font-size:24px;
+
+font-weight:700;
+
+color:#111827;
+
+}
+
+/* .review-role{
+    opacity:.85;
+} */
+
+.review-role{
+
+font-size:16px;
+
+color:#6B7280;
+
+line-height:1.6;
+
+}
+
+
+.form-label{
+    color:white;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+@media(max-width:992px){
+
+.login-right{
+display:none;
+}
+
+.login-left{
+width:100%;
+padding:35px;
+}
+
+.login-title{
+font-size:30px;
+}
+
+}
+
+
+/* ============================= */
+/* INPUT GROUP */
+/* ============================= */
+
+.input-group-text{
+    background:#fff;
+    border-right:none;
+    border-radius:12px 0 0 12px;
+}
+
+.input-group .form-control{
+    border-left:none;
+}
+
+.input-group .btn{
+
+background:#083B3E;
+
+color:white;
+
+border:none;
+
+transition:.3s;
+
+}
+
+.input-group .btn:hover{
+
+background:#062c2f;
+
+color:#18D6B5;
+
+}
+
+/* ============================= */
+/* INPUT FOCUS */
+/* ============================= */
+
+.form-control:focus{
+
+border-color:#18D6B5;
+
+box-shadow:0 0 0 .2rem rgba(24,214,181,.18);
+
+}
+
+/* ============================= */
+/* BUTTON */
+/* ============================= */
+
+.btn-login{
+
+background:#042E31;
+
+font-size:17px;
+
+letter-spacing:.5px;
+
+font-weight:700;
+
+}
+
+.btn-login:hover{
+
+background:#031d1f;
+
+}
+
+/* ============================= */
+/* FORGOT PASSWORD */
+/* ============================= */
+
+.login-box a{
+color:#ffffff;
+opacity:.85;
+font-weight:600;
+transition:.3s;
+}
+
+.login-box a:hover{
+
+opacity:1;
+
+color:#9cf5e8;
+
+}
+
+/* ============================= */
+/* RIGHT PANEL */
+/* ============================= */
+
+.login-right{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+/* Circle 1 */
+
+.login-right::before{
+
+content:"";
+
+position:absolute;
+
+width:350px;
+
+height:350px;
+
+background:rgba(255,255,255,.05);
+
+border-radius:50%;
+
+top:-120px;
+
+right:-120px;
+
+}
+
+/* Circle 2 */
+
+.login-right::after{
+
+content:"";
+
+position:absolute;
+
+width:250px;
+
+height:250px;
+
+background:rgba(255,255,255,.05);
+
+border-radius:50%;
+
+bottom:-70px;
+
+left:-70px;
+
+}
+
+/* ============================= */
+/* RIGHT CONTENT */
+/* ============================= */
+
+.login-right>div{
+
+position:relative;
+
+z-index:5;
+
+max-width:560px;
+
+}
+
+/* ============================= */
+/* LOGO */
+/* ============================= */
+
+.company-logo{
+
+height:85px;
+width: auto;
+
+object-fit:contain;
+
+}
+
+.company-name{
+
+    padding-top: 3%;
+ height:105px;
+    width:auto;
+    object-fit:contain;
+
+}
+
+/* ============================= */
+/* FORM */
+/* ============================= */
+
+.login-box form{
+
+margin-top:35px;
+
+}
+
+.login-left>div{
+
+max-width:560px;
+
+position:relative;
+
+z-index:10;
+
+}
+
+/* ============================= */
+/* ANIMATION */
+/* ============================= */
+
+
+.login-left{
+
+background:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.login-left::before{
+
+content:"";
+
+position:absolute;
+
+width:300px;
+
+height:300px;
+
+background:rgba(24,214,181,.08);
+
+border-radius:50%;
+
+top:-120px;
+
+left:-120px;
+
+}
+
+.login-left::after{
+
+content:"";
+
+position:absolute;
+
+width:220px;
+
+height:220px;
+
+background:rgba(8,59,62,.06);
+
+border-radius:50%;
+
+bottom:-70px;
+
+right:-70px;
+
+}
+
+
+.login-left,
+.login-right{
+
+animation:fadeIn .6s ease;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}

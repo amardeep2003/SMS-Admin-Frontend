@@ -14,6 +14,7 @@ function SummaryCards({ overview, revenue }) {
       vt: overview?.students?.vt || 0,
       lt: overview?.students?.lt || 0,
       bg: "primary-card",
+      iconBg: "primary-icon",
     },
     {
       title: "Active Courses",
@@ -22,6 +23,7 @@ function SummaryCards({ overview, revenue }) {
       vt: overview?.activeCourses?.vt || 0,
       lt: overview?.activeCourses?.lt || 0,
       bg: "success-card",
+      iconBg: "success-icon",
     },
     {
       title: "Revenue",
@@ -30,6 +32,7 @@ function SummaryCards({ overview, revenue }) {
       vt: `₹${revenue?.vt?.totalRevenue || 0}`,
       lt: `₹${revenue?.lt?.totalRevenue || 0}`,
       bg: "warning-card",
+      iconBg: "warning-icon",
     },
     {
       title: "Enrollments",
@@ -38,6 +41,7 @@ function SummaryCards({ overview, revenue }) {
       vt: revenue?.vt?.totalEnrollments || 0,
       lt: revenue?.lt?.totalEnrollments || 0,
       bg: "danger-card",
+      iconBg: "danger-icon",
     },
   ];
 
@@ -53,9 +57,7 @@ function SummaryCards({ overview, revenue }) {
                 <h3>{card.value}</h3>
               </div>
 
-              <div className="summary-icon">
-                {card.icon}
-              </div>
+              <div className={`summary-icon ${card.iconBg}`}>{card.icon}</div>
             </div>
 
             <div className="summary-footer">

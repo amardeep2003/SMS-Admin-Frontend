@@ -8,12 +8,13 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import AdminLayout from "./layouts/AdminLayout";
+import Students from "./pages/Students";
+import Courses from "./pages/Courses";
 
 function App() {
   return (
     <>
       <Routes>
-
         <Route path="/" element={<Login />} />
 
         <Route
@@ -23,11 +24,12 @@ function App() {
             </ProtectedRoute>
           }
         >
-
           <Route path="/dashboard" element={<Dashboard />} />
 
-        </Route>
+          <Route path="/students" element={<Students />} />
 
+          <Route path="/courses" element={<Courses />} />
+        </Route>
       </Routes>
     </>
   );

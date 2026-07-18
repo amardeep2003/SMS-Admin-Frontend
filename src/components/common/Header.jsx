@@ -1,4 +1,4 @@
-import { FaBars, FaBell, FaMoon, FaSearch } from "react-icons/fa";
+import { FaBars, FaSearch } from "react-icons/fa";
 
 function Header() {
     const admin = JSON.parse(localStorage.getItem("admin"));
@@ -10,7 +10,7 @@ function Header() {
 
             <div className="d-flex align-items-center gap-3">
 
-                <button className="menu-btn">
+                <button className="menu-btn mobile-menu">
                     <FaBars />
                 </button>
 
@@ -32,7 +32,7 @@ function Header() {
 
             <div className="d-flex align-items-center gap-3">
 
-                <button className="header-icon">
+                {/* <button className="header-icon">
 
                     <FaMoon />
 
@@ -44,7 +44,7 @@ function Header() {
 
                     <span className="notify-dot"></span>
 
-                </button>
+                </button> */}
 
                 <div className="d-flex align-items-center gap-2">
 
