@@ -181,10 +181,22 @@ function CourseTable({ courses, loadCourses }) {
         }}
       />
 
-      <DeleteCourseModal
+      {/* <DeleteCourseModal
         courseId={deleteId}
         onClose={() => setDeleteId(null)}
         onSuccess={loadCourses}
+      /> */}
+      <DeleteCourseModal
+        show={deleteId !== null}
+        courseId={deleteId}
+        courseName={
+          courses.find(c => c._id === deleteId)?.name
+        }
+        onClose={() => setDeleteId(null)}
+        onSuccess={() => {
+          setDeleteId(null);
+          loadCourses();
+        }}
       />
     </>
   );

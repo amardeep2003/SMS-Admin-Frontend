@@ -52,15 +52,15 @@ function Courses() {
 
   // Edit
 
-  const [showEdit, setShowEdit] = useState(false);
+  // const [showEdit, setShowEdit] = useState(false);
 
   const [selectedCourse, setSelectedCourse] = useState(null);
 
   // Delete
 
-  const [showDelete, setShowDelete] = useState(false);
+  // const [showDelete, setShowDelete] = useState(false);
 
-  const [deleteId, setDeleteId] = useState(null);
+  // const [deleteId, setDeleteId] = useState(null);nb
 
   // ==========================
   // Load Courses
@@ -227,7 +227,7 @@ function Courses() {
             View Modal
       ========================== */}
 
-      <CourseViewModal courseId={viewId} onClose={() => setViewId(null)} />
+      {/* <CourseViewModal courseId={viewId} onClose={() => setViewId(null)} /> */}
 
       {/* =========================
             Add Course
@@ -243,7 +243,7 @@ function Courses() {
             Edit Course
       ========================== */}
 
-      <EditCourseModal
+      {/* <EditCourseModal
         show={showEdit}
         course={selectedCourse}
         onClose={() => {
@@ -251,13 +251,13 @@ function Courses() {
           setSelectedCourse(null);
         }}
         onSuccess={handleEditSuccess}
-      />
+      /> */}
 
       {/* =========================
             Delete Course
       ========================== */}
 
-      <DeleteCourseModal
+      {/* <DeleteCourseModal
         show={showDelete}
         courseId={deleteId}
         onClose={() => {
@@ -265,7 +265,7 @@ function Courses() {
           setDeleteId(null);
         }}
         onDelete={handleDelete}
-      />
+      /> */}
     </div>
   );
 }
