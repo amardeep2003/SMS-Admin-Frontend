@@ -3,25 +3,37 @@ function CoursePagination({ pagination, page, setPage }) {
 
   return (
     <div className="student-pagination">
+
       <button
-        className="page-btn"
+        className="pagination-btn"
         disabled={!pagination.hasPreviousPage}
         onClick={() => setPage(page - 1)}
       >
         ← Previous
       </button>
 
-      <div className="page-number">
-        Page {pagination.currentPage} of {pagination.totalPages}
+
+      <div className="pagination-info">
+
+        <span className="page-number">
+          {pagination.currentPage}
+        </span>
+
+        <span className="page-text">
+          of {pagination.totalPages}
+        </span>
+
       </div>
 
+
       <button
-        className="page-btn"
+        className="pagination-btn"
         disabled={!pagination.hasNextPage}
         onClick={() => setPage(page + 1)}
       >
         Next →
       </button>
+
     </div>
   );
 }

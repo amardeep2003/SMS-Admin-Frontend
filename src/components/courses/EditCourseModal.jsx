@@ -63,8 +63,20 @@ function EditCourseModal({ courseId, onClose, onSuccess }) {
     try {
       setSaving(true);
 
+      // const payload = {
+      //   ...formData,
+      //   durationMonths: Number(formData.durationMonths),
+      //   actualPrice: Number(formData.actualPrice),
+      //   discountedPrice: Number(formData.discountedPrice),
+      // };
+
+      const {
+        type,
+        ...rest
+      } = formData;
+
       const payload = {
-        ...formData,
+        ...rest,
         durationMonths: Number(formData.durationMonths),
         actualPrice: Number(formData.actualPrice),
         discountedPrice: Number(formData.discountedPrice),
@@ -93,11 +105,22 @@ function EditCourseModal({ courseId, onClose, onSuccess }) {
   return (
     <div className="modal fade show d-block modal-bg">
       <div className="modal-dialog modal-lg">
-        <div className="modal-content">
-          <div className="modal-header">
-            <h4>Edit Course</h4>
+        <div className="modal-content course-modal">
+          <div className="course-header">
+            {/* <h4>Edit Course</h4>
+            
 
-            <button className="btn-close" onClick={onClose} />
+            <button className="btn-close" onClick={onClose} /> */}
+
+            <div>
+              <h3>Edit Course</h3>
+              <p>Update course information</p>
+            </div>
+
+            <button
+              className="btn-close"
+              onClick={onClose}
+            />
           </div>
 
           <form onSubmit={handleSubmit}>
@@ -121,7 +144,7 @@ function EditCourseModal({ courseId, onClose, onSuccess }) {
                   <div className="col-md-4 mb-3">
                     <label>Type</label>
 
-                    <select
+                    {/* <select
                       className="form-select"
                       name="type"
                       value={formData.type}
@@ -130,7 +153,20 @@ function EditCourseModal({ courseId, onClose, onSuccess }) {
                       <option value="LT">LT</option>
 
                       <option value="VT">VT</option>
+                    </select> */}
+
+                    <select
+                      className="form-select"
+                      value={formData.type}
+                      disabled
+                    >
+                      <option value="LT">LT</option>
+                      <option value="VT">VT</option>
                     </select>
+
+                    <small className="text-muted">
+                      Course type cannot be changed.
+                    </small>
                   </div>
 
                   <div className="col-md-12 mb-3">
@@ -212,7 +248,7 @@ function EditCourseModal({ courseId, onClose, onSuccess }) {
             </div>
 
             <div className="modal-footer">
-              <button
+              {/* <button
                 type="button"
                 className="btn btn-secondary"
                 onClick={onClose}
@@ -221,6 +257,22 @@ function EditCourseModal({ courseId, onClose, onSuccess }) {
               </button>
 
               <button className="btn btn-primary" disabled={saving}>
+                {saving ? "Updating..." : "Update Course"}
+              </button> */}
+
+              <button
+                type="button"
+                className="theme-outline-btn"
+                onClick={onClose}
+              >
+                Cancel
+              </button>
+
+              <button
+                type="submit"
+                className="theme-btn"
+                disabled={saving}
+              >
                 {saving ? "Updating..." : "Update Course"}
               </button>
             </div>

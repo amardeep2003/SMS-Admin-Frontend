@@ -55,20 +55,34 @@ function AddCourseModal({ show, onClose, onSuccess }) {
   };
 
   return (
-    <div className="modal fade show d-block modal-bg">
+    // <div className="modal fade show d-block modal-bg">
+    <div className="modal fade show d-block course-modal-bg">
       <div className="modal-dialog modal-lg">
-        <div className="modal-content">
-          <div className="modal-header">
+        {/* <div className="modal-content"> */}
+        <div className="modal-content course-modal">
+          {/* <div className="modal-header">
             <h4>Add Course</h4>
 
             <button className="btn-close" onClick={onClose}></button>
+          </div> */}
+
+          <div className="course-header">
+            <div>
+              <h3>Add New Course</h3>
+              <p>Create a new course for your institute</p>
+            </div>
+
+            <button
+              className="btn-close"
+              onClick={onClose}
+            ></button>
           </div>
 
           <form onSubmit={handleSubmit}>
-            <div className="modal-body">
+            <div className="modal-body p-4">
               <div className="row">
                 <div className="col-md-8 mb-3">
-                  <label>Course Name</label>
+                  <label className="form-label">Course Name</label>
 
                   <input
                     className="form-control"
@@ -80,7 +94,7 @@ function AddCourseModal({ show, onClose, onSuccess }) {
                 </div>
 
                 <div className="col-md-4 mb-3">
-                  <label>Type</label>
+                  <label className="form-label">Type</label>
 
                   <select
                     className="form-select"
@@ -94,7 +108,7 @@ function AddCourseModal({ show, onClose, onSuccess }) {
                 </div>
 
                 <div className="col-md-12 mb-3">
-                  <label>Description</label>
+                  <label className="form-label">Description</label>
 
                   <textarea
                     rows="3"
@@ -107,7 +121,7 @@ function AddCourseModal({ show, onClose, onSuccess }) {
                 </div>
 
                 <div className="col-md-4 mb-3">
-                  <label>Duration (Months)</label>
+                  <label className="form-label">Duration (Months)</label>
 
                   <input
                     type="number"
@@ -121,7 +135,7 @@ function AddCourseModal({ show, onClose, onSuccess }) {
                 </div>
 
                 <div className="col-md-4 mb-3">
-                  <label>Actual Price</label>
+                  <label className="form-label">Actual Price</label>
 
                   <input
                     type="number"
@@ -134,7 +148,7 @@ function AddCourseModal({ show, onClose, onSuccess }) {
                 </div>
 
                 <div className="col-md-4 mb-3">
-                  <label>Discount Price</label>
+                  <label className="form-label">Discount Price</label>
 
                   <input
                     type="number"
@@ -147,7 +161,7 @@ function AddCourseModal({ show, onClose, onSuccess }) {
                 </div>
 
                 <div className="col-md-12 mb-3">
-                  <label>Syllabus</label>
+                  <label className="form-label">Syllabus</label>
 
                   <textarea
                     rows="5"
@@ -164,13 +178,13 @@ function AddCourseModal({ show, onClose, onSuccess }) {
             <div className="modal-footer">
               <button
                 type="button"
-                className="btn btn-secondary"
+                className="theme-outline-btn"
                 onClick={onClose}
               >
                 Cancel
               </button>
 
-              <button className="btn btn-primary" disabled={loading}>
+              <button className="theme-btn" disabled={loading}>
                 {loading ? "Saving..." : "Create Course"}
               </button>
             </div>
