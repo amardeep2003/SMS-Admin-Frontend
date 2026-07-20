@@ -1,0 +1,34 @@
+/* ===========================
+   Affiliate Modal
+=========================== */
+
+.affiliate-modal .form-label {
+  color: #212529 !important;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.affiliate-modal .form-control,
+.affiliate-modal .form-select,
+.affiliate-modal textarea {
+  color: #212529;
+  background: #fff;
+}
+
+.affiliate-modal .modal-header h4 {
+  color: #212529;
+  font-weight: 700;
+}
+
+.affiliate-modal textarea {
+  resize: none;
+}
+
+.affiliate-modal .modal-body {
+  padding: 24px;
+}
+
+.affiliate-modal .modal-footer {
+  padding: 16px 24px;
+}

@@ -1,0 +1,202 @@
+import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
+
+import { updateAffiliate } from "../../services/affiliateApi";
+
+function EditAffiliateModal({
+    show,
+    affiliate,
+    onClose,
+    onSuccess,
+}) {
+    const [loading, setLoading] = useState(false);
+
+    const [formData, setFormData] = useState({
+        fullName: "",
+        mobileNumber: "",
+        email: "",
+        address: "",
+        status: "ACTIVE",
+    });
+
+    useEffect(() => {
+        if (affiliate) {
+            setFormData({
+                fullName: affiliate.fullName || "",
+                mobileNumber: affiliate.mobileNumber || "",
+                email: affiliate.email || "",
+                address: affiliate.address || "",
+                status: affiliate.status || "ACTIVE",
+            });
+        }
+    }, [affiliate]);
+
+    if (!show) return null;
+
+    const handleChange = (e) => {
+        setFormData((prev) => ({
+            ...prev,
+            [e.target.name]: e.target.value,
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            setLoading(true);
+
+            const res = await updateAffiliate(
+                affiliate._id,
+                formData
+            );
+
+            toast.success(res.data.message);
+
+            onSuccess();
+
+            onClose();
+        } catch (err) {
+            toast.error(
+                err.response?.data?.message ||
+                "Failed to update affiliate"
+            );
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return (
+        // <div className="modal fade show d-block modal-bg">
+        <div className="modal fade show d-block modal-bg affiliate-modal">
+            <div className="modal-dialog modal-lg modal-dialog-centered">
+                <div className="modal-content">
+
+                    <form onSubmit={handleSubmit}>
+
+                        <div className="modal-header">
+                            <h4>Edit Affiliate</h4>
+
+                            <button
+                                type="button"
+                                className="btn-close"
+                                onClick={onClose}
+                            />
+                        </div>
+
+                        <div className="modal-body">
+
+                            <div className="row">
+
+                                <div className="col-md-6 mb-3">
+                                    <label className="form-label">
+                                        Full Name
+                                    </label>
+
+                                    <input
+                                        className="form-control"
+                                        name="fullName"
+                                        value={formData.fullName}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </div>
+
+                                <div className="col-md-6 mb-3">
+                                    <label className="form-label">
+                                        Mobile Number
+                                    </label>
+
+                                    <input
+                                        className="form-control"
+                                        name="mobileNumber"
+                                        value={formData.mobileNumber}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </div>
+
+                                <div className="col-md-6 mb-3">
+                                    <label className="form-label">
+                                        Email
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        className="form-control"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                    />
+                                </div>
+
+                                <div className="col-md-6 mb-3">
+                                    <label className="form-label">
+                                        Status
+                                    </label>
+
+                                    <select
+                                        className="form-select"
+                                        name="status"
+                                        value={formData.status}
+                                        onChange={handleChange}
+                                    >
+                                        <option value="ACTIVE">
+                                            ACTIVE
+                                        </option>
+
+                                        <option value="INACTIVE">
+                                            INACTIVE
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <div className="col-12 mb-3">
+                                    <label className="form-label">
+                                        Address
+                                    </label>
+
+                                    <textarea
+                                        rows="3"
+                                        className="form-control"
+                                        name="address"
+                                        value={formData.address}
+                                        onChange={handleChange}
+                                    />
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div className="modal-footer">
+
+                            <button
+                                type="button"
+                                className="btn btn-secondary"
+                                onClick={onClose}
+                            >
+                                Cancel
+                            </button>
+
+                            <button
+                                type="submit"
+                                className="btn btn-primary"
+                                disabled={loading}
+                            >
+                                {loading
+                                    ? "Updating..."
+                                    : "Update Affiliate"}
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default EditAffiliateModal;
