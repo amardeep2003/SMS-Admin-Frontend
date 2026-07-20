@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { MdEmail, MdLockOutline } from "react-icons/md";
-import { Navigate, useNavigate } from "react-router-dom";
+// import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate, Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
 import logo from "../assets/images/logicgyan-icon.webp";
@@ -142,10 +143,16 @@ function Login() {
 
             {/* Forgot Password */}
 
-            <div className="text-end mb-4">
+            {/* <div className="text-end mb-4">
               <a href="#" className="text-decoration-none">
                 Forgot Password?
               </a>
+            </div> */}
+
+            <div className="text-end mb-4">
+              <Link to="/forgot-password" className="text-decoration-none">
+                Forgot Password?
+              </Link>
             </div>
 
             {/* Login Button */}

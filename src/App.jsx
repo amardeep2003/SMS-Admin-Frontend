@@ -10,12 +10,16 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import AdminLayout from "./layouts/AdminLayout";
 import Students from "./pages/Students";
 import Courses from "./pages/Courses";
+import ForgotPassword from "./pages/ForgotPassword";
+import Trainers from "./pages/Trainers";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Login />} />
+
+        <Route path="/forgot-password" element={<ForgotPassword />} />
 
         <Route
           element={
@@ -29,6 +33,8 @@ function App() {
           <Route path="/students" element={<Students />} />
 
           <Route path="/courses" element={<Courses />} />
+
+          <Route path="/trainers" element={<Trainers />} />
         </Route>
       </Routes>
     </>
