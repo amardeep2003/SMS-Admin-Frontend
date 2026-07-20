@@ -12,6 +12,7 @@ import Students from "./pages/Students";
 import Courses from "./pages/Courses";
 import ForgotPassword from "./pages/ForgotPassword";
 import Trainers from "./pages/Trainers";
+import Batches from "./pages/Batches";
 
 function App() {
   return (
@@ -35,6 +36,8 @@ function App() {
           <Route path="/courses" element={<Courses />} />
 
           <Route path="/trainers" element={<Trainers />} />
+
+           <Route path="/batches" element={<Batches />} />
         </Route>
       </Routes>
     </>

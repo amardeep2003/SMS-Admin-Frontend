@@ -1,0 +1,26 @@
+.badge-active{
+    background:#d1fae5;
+    color:#047857;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:600;
+}
+
+.badge-inactive{
+    background:#fee2e2;
+    color:#dc2626;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:600;
+}
+
+.badge-completed{
+    background:#dbeafe;
+    color:#2563eb;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:600;
+}
