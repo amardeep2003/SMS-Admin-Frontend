@@ -22,6 +22,12 @@ function Login() {
 
   const token = localStorage.getItem("accessToken");
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
   useEffect(() => {
     document.title = "Login | LogicGyan Admin";
   }, []);
@@ -30,11 +36,11 @@ function Login() {
     return <Navigate to="/dashboard" replace />;
   }
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors },
+  // } = useForm();
 
   const onSubmit = async (data) => {
     try {
