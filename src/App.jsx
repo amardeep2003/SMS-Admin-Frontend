@@ -14,6 +14,8 @@ import ForgotPassword from "./pages/ForgotPassword";
 import Trainers from "./pages/Trainers";
 import Batches from "./pages/Batches";
 import Affiliates from "./pages/Affiliates";
+import Enrollments from "./pages/Enrollments";
+import PublicEnrollment from "./pages/PublicEnrollment";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path="/" element={<Login />} />
 
         <Route path="/forgot-password" element={<ForgotPassword />} />
+
+        <Route path="/register" element={<PublicEnrollment />} />
 
         <Route
           element={
@@ -41,6 +45,8 @@ function App() {
           <Route path="/batches" element={<Batches />} />
 
           <Route path="/affiliate" element={<Affiliates />} />
+
+          <Route path="/enrollments" element={<Enrollments />} />
         </Route>
       </Routes>
     </>

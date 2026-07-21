@@ -1,0 +1,145 @@
+/* =========================================================
+   PUBLIC ENROLLMENT PAGE
+========================================================= */
+
+.public-enrollment-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #edf4ff 0%, #f7fbff 100%);
+  padding: 40px 0;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.enrollment-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 35px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eef2f7;
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.enrollment-card h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #212529;
+}
+
+.enrollment-card p {
+  color: #6c757d;
+}
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+.public-enrollment-page .form-label {
+  color: #212529;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.public-enrollment-page .form-control,
+.public-enrollment-page .form-select {
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+  box-shadow: none;
+  transition: all 0.25s ease;
+}
+
+.public-enrollment-page textarea.form-control {
+  height: auto;
+}
+
+.public-enrollment-page .form-control:focus,
+.public-enrollment-page .form-select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.15);
+}
+
+/* =========================================================
+   REGISTRATION FEE BOX
+========================================================= */
+
+.public-enrollment-page .alert {
+  border-radius: 12px;
+  border: none;
+  padding: 18px 20px;
+}
+
+.public-enrollment-page .alert h4 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.public-enrollment-page .btn-primary {
+  height: 50px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.25s;
+}
+
+.public-enrollment-page .btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   PAYMENT MODAL
+========================================================= */
+
+.modal-content {
+  border-radius: 16px;
+}
+
+.modal-header {
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.modal-footer {
+  border-top: 1px solid #f1f1f1;
+}
+
+.modal-body h2 {
+  font-weight: 700;
+}
+
+.modal-body h3 {
+  font-weight: 700;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+  .public-enrollment-page {
+    padding: 20px 10px;
+  }
+
+  .enrollment-card {
+    padding: 20px;
+  }
+
+  .enrollment-card h2 {
+    font-size: 24px;
+  }
+
+  .public-enrollment-page .btn-primary {
+    font-size: 15px;
+  }
+}
