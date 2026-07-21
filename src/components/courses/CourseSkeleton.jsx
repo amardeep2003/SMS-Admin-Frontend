@@ -1,4 +1,5 @@
 function CourseSkeleton() {
+  console.log("Course Skeleton Rendered");
   return (
     <div className="card-box">
       <table className="table">

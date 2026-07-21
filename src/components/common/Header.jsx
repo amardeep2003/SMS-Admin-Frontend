@@ -14,7 +14,7 @@ function Header() {
                     <FaBars />
                 </button>
 
-                <div className="search-box position-relative">
+                {/* <div className="search-box position-relative">
 
                     <FaSearch className="search-icon" />
 
@@ -24,7 +24,7 @@ function Header() {
                         placeholder="Search Students, Courses..."
                     />
 
-                </div>
+                </div> */}
 
             </div>
 

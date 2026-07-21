@@ -12,69 +12,89 @@ function TrainerSkeleton() {
               <th>Salary</th>
               <th>Joining Date</th>
               <th>Status</th>
-              <th>Action</th>
+              <th width="220">Action</th>
             </tr>
           </thead>
 
           <tbody>
             {[...Array(6)].map((_, index) => (
               <tr key={index}>
+                {/* Name */}
                 <td>
-                  <div className="placeholder-glow" style={{ width: "170px" }}>
-                    <span className="placeholder col-12"></span>
+                  <div className="d-flex align-items-center gap-3">
+                    <div className="skeleton-avatar"></div>
+
+                    <div style={{ width: "100%" }}>
+                      <div
+                        className="skeleton-line"
+                        style={{ width: "70%", marginBottom: "8px" }}
+                      ></div>
+
+                      <div
+                        className="skeleton-line"
+                        style={{ width: "50%", height: "12px" }}
+                      ></div>
+                    </div>
                   </div>
                 </td>
 
+                {/* Contact */}
                 <td>
-                  <div className="placeholder-glow" style={{ width: "120px" }}>
-                    <span className="placeholder col-12"></span>
-                  </div>
+                  <div
+                    className="skeleton-line"
+                    style={{ width: "85%" }}
+                  ></div>
                 </td>
 
+                {/* Qualification */}
                 <td>
-                  <div className="placeholder-glow" style={{ width: "150px" }}>
-                    <span className="placeholder col-12"></span>
-                  </div>
+                  <div
+                    className="skeleton-line"
+                    style={{ width: "80%" }}
+                  ></div>
                 </td>
 
+                {/* Specialization */}
                 <td>
-                  <div className="placeholder-glow" style={{ width: "180px" }}>
-                    <span className="placeholder col-12"></span>
-                  </div>
+                  <div
+                    className="skeleton-line"
+                    style={{ width: "90%", marginBottom: "8px" }}
+                  ></div>
+
+                  <div
+                    className="skeleton-line"
+                    style={{ width: "65%", height: "12px" }}
+                  ></div>
                 </td>
 
+                {/* Salary */}
                 <td>
-                  <div className="placeholder-glow" style={{ width: "90px" }}>
-                    <span className="placeholder col-12"></span>
-                  </div>
+                  <div
+                    className="skeleton-line"
+                    style={{ width: "60%" }}
+                  ></div>
                 </td>
 
+                {/* Joining Date */}
                 <td>
-                  <div className="placeholder-glow" style={{ width: "110px" }}>
-                    <span className="placeholder col-12"></span>
-                  </div>
+                  <div
+                    className="skeleton-line"
+                    style={{ width: "75%" }}
+                  ></div>
                 </td>
 
+                {/* Status */}
                 <td>
-                  <div className="placeholder-glow" style={{ width: "80px" }}>
-                    <span className="placeholder col-12"></span>
-                  </div>
+                  <div className="skeleton-badge"></div>
                 </td>
 
+                {/* Action */}
                 <td>
                   <div className="d-flex gap-2">
-                    {[1, 2, 3, 4].map((btn) => (
-                      <div
-                        key={btn}
-                        className="placeholder-glow"
-                        style={{
-                          width: "32px",
-                          height: "32px",
-                        }}
-                      >
-                        <span className="placeholder col-12 h-100"></span>
-                      </div>
-                    ))}
+                    <div className="skeleton-btn"></div>
+                    <div className="skeleton-btn"></div>
+                    <div className="skeleton-btn"></div>
+                    <div className="skeleton-btn"></div>
                   </div>
                 </td>
               </tr>

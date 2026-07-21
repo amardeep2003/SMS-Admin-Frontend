@@ -23,6 +23,7 @@ import DeleteCourseModal from "../components/courses/DeleteCourseModal";
 import "../assets/images/css/course.css";
 
 function Courses() {
+  // console.log("Loading =", loading);
   const [courses, setCourses] = useState([]);
   const [pagination, setPagination] = useState({});
 
@@ -67,6 +68,10 @@ function Courses() {
   // ==========================
 
   const loadCourses = async () => {
+
+    console.log("Loading Start");
+
+
     try {
       setLoading(true);
 

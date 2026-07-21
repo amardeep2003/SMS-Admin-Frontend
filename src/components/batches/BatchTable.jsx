@@ -72,8 +72,8 @@ function BatchTable({
                   <span
                     className={
                       batch.courseType === "LT"
-                        ? "badge badge-primary"
-                        : "badge badge-warning"
+                        ? "course-type-lt"
+                        : "course-type-vt"
                     }
                   >
                     {batch.courseType}

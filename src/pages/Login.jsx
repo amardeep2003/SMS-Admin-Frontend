@@ -25,6 +25,7 @@ function Login() {
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors },
   } = useForm();
 
@@ -57,9 +58,15 @@ function Login() {
         replace: true,
       });
     } catch (error) {
-      toast.error(
-        error?.response?.data?.message || "Unable to login. Please try again.",
-      );
+      // toast.error(
+      //   error?.response?.data?.message || "Unable to login. Please try again.",
+      // );
+      const message = error?.response?.data?.message || "Login failed";
+
+      setError("root", {
+        type: "server",
+        message,
+      });
     } finally {
       setLoading(false);
     }
@@ -160,6 +167,12 @@ function Login() {
                 Forgot Password?
               </Link>
             </div>
+
+            {errors.root && (
+              <div className="login-error-message">
+                {errors.root.message}
+              </div>
+            )}
 
             {/* Login Button */}
 

@@ -19,20 +19,66 @@ api.interceptors.request.use(
 
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => Promise.reject(error),
 );
 
 // Response Interceptor
+// api.interceptors.response.use(
+//   (response) => response,
+
+//   async (error) => {
+//     const originalRequest = error.config;
+
+//     // Access Token Expired
+//     if (
+//       error.response?.status === 401 &&
+//       !originalRequest._retry &&
+//       !originalRequest.url.includes("/auth/login")
+//     ) {
+//       originalRequest._retry = true;
+
+//       try {
+//         const response = await axios.post(
+//           `${import.meta.env.VITE_API_BASE_URL}/auth/refresh`,
+//           {},
+//           {
+//             withCredentials: true,
+//           },
+//         );
+
+//         const newAccessToken = response.data.accessToken;
+
+//         localStorage.setItem("accessToken", newAccessToken);
+
+//         originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
+
+//         return api(originalRequest);
+//       } catch (refreshError) {
+//         localStorage.removeItem("accessToken");
+//         localStorage.removeItem("admin");
+
+//         window.location.href = "/";
+
+//         return Promise.reject(refreshError);
+//       }
+//     }
+
+//     return Promise.reject(error);
+//   },
+// );
+
 api.interceptors.response.use(
   (response) => response,
 
   async (error) => {
     const originalRequest = error.config;
 
-    // Access Token Expired
+    const isLoginRequest = originalRequest?.url?.includes("/auth/login");
+
     if (
       error.response?.status === 401 &&
-      !originalRequest._retry
+      !originalRequest._retry &&
+      !isLoginRequest
     ) {
       originalRequest._retry = true;
 
@@ -40,9 +86,7 @@ api.interceptors.response.use(
         const response = await axios.post(
           `${import.meta.env.VITE_API_BASE_URL}/auth/refresh`,
           {},
-          {
-            withCredentials: true,
-          }
+          { withCredentials: true },
         );
 
         const newAccessToken = response.data.accessToken;
@@ -63,7 +107,7 @@ api.interceptors.response.use(
     }
 
     return Promise.reject(error);
-  }
+  },
 );
 
 export default api;

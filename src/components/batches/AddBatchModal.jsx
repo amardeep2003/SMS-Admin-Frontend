@@ -91,17 +91,27 @@ function AddBatchModal({ show, onClose, onSuccess }) {
   if (!show) return null;
 
   return (
-    <div className="modal fade show d-block modal-bg">
+    // <div className="modal fade show d-block modal-bg">
+    <div className="modal fade show d-block course-modal-bg">
       <div className="modal-dialog modal-lg">
-        <div className="modal-content">
-          <div className="modal-header">
+        {/* <div className="modal-content"> */}
+        <div className="modal-content course-modal">
+          {/* <div className="modal-header">
             <h4>Add Batch</h4>
 
             <button className="btn-close" onClick={onClose} />
+          </div> */}
+          <div className="course-header">
+            <div>
+              <h3>Create New Batch</h3>
+              <p>Create a new training batch for students</p>
+            </div>
+
+            <button className="btn-close" onClick={onClose}></button>
           </div>
 
           <form onSubmit={handleSubmit}>
-            <div className="modal-body">
+            <div className="modal-body p-4">
               <div className="row">
                 {/* Batch Name */}
 
@@ -238,7 +248,7 @@ function AddBatchModal({ show, onClose, onSuccess }) {
             </div>
 
             <div className="modal-footer">
-              <button
+              {/* <button
                 type="button"
                 className="btn btn-secondary"
                 onClick={onClose}
@@ -248,6 +258,18 @@ function AddBatchModal({ show, onClose, onSuccess }) {
 
               <button className="btn btn-primary" disabled={saving}>
                 {saving ? "Saving..." : "Add Batch"}
+              </button> */}
+
+              <button
+                type="button"
+                className="theme-outline-btn"
+                onClick={onClose}
+              >
+                Cancel
+              </button>
+
+              <button className="theme-btn" disabled={saving}>
+                {saving ? "Saving..." : "Create Batch"}
               </button>
             </div>
           </form>

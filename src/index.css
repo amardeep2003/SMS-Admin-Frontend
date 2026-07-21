@@ -136,3 +136,138 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 } */
+
+
+/* =========================
+   Skeleton Loader
+========================= */
+
+.skeleton-line {
+  width: 100%;
+  height: 14px;
+  background: linear-gradient(
+    90deg,
+    #ececec 25%,
+    #f7f7f7 50%,
+    #ececec 75%
+  );
+  background-size: 200% 100%;
+  border-radius: 6px;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+.skeleton-title {
+  width: 45%;
+  height: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    #ececec 25%,
+    #f7f7f7 50%,
+    #ececec 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+.skeleton-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(
+    90deg,
+    #ececec 25%,
+    #f7f7f7 50%,
+    #ececec 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+.skeleton-badge {
+  width: 70px;
+  height: 28px;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    #ececec 25%,
+    #f7f7f7 50%,
+    #ececec 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+.skeleton-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(
+    90deg,
+    #ececec 25%,
+    #f7f7f7 50%,
+    #ececec 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+
+.course-type-lt {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(13, 110, 253, 0.15);
+  color: #0d6efd;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.course-type-vt {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255, 193, 7, 0.18);
+  color: #b58105;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ==========================
+   Add Button
+========================== */
+
+.add-btn {
+  background: #ebf1ec;
+  color: #0e0e0e;
+}
+
+.add-btn:hover {
+  background: #0e0e0e;
+  color: #929693;
+  transform: scale(1.08);
+}
+
+.course-type {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
