@@ -10,6 +10,7 @@ const initialState = {
   durationMonths: "",
   syllabus: "",
   actualPrice: "",
+  registrationFee: "",
   discountedPrice: "",
 };
 
@@ -33,10 +34,18 @@ function AddCourseModal({ show, onClose, onSuccess }) {
     try {
       setLoading(true);
 
+      // const res = await addCourse({
+      //   ...formData,
+      //   durationMonths: Number(formData.durationMonths),
+      //   actualPrice: Number(formData.actualPrice),
+      //   discountedPrice: Number(formData.discountedPrice),
+      // });
+
       const res = await addCourse({
         ...formData,
         durationMonths: Number(formData.durationMonths),
         actualPrice: Number(formData.actualPrice),
+        registrationFee: Number(formData.registrationFee),
         discountedPrice: Number(formData.discountedPrice),
       });
 
@@ -72,10 +81,7 @@ function AddCourseModal({ show, onClose, onSuccess }) {
               <p>Create a new course for your institute</p>
             </div>
 
-            <button
-              className="btn-close"
-              onClick={onClose}
-            ></button>
+            <button className="btn-close" onClick={onClose}></button>
           </div>
 
           <form onSubmit={handleSubmit}>
@@ -143,6 +149,19 @@ function AddCourseModal({ show, onClose, onSuccess }) {
                     name="actualPrice"
                     required
                     value={formData.actualPrice}
+                    onChange={handleChange}
+                  />
+                </div>
+
+                <div className="col-md-4 mb-3">
+                  <label className="form-label">Registration Fee</label>
+
+                  <input
+                    type="number"
+                    className="form-control"
+                    name="registrationFee"
+                    required
+                    value={formData.registrationFee}
                     onChange={handleChange}
                   />
                 </div>

@@ -16,6 +16,7 @@ function EditCourseModal({ courseId, onClose, onSuccess }) {
     syllabus: "",
     actualPrice: "",
     discountedPrice: "",
+    registrationFee: "",
     status: "ACTIVE",
   });
 
@@ -33,6 +34,17 @@ function EditCourseModal({ courseId, onClose, onSuccess }) {
 
       const data = res.data.data;
 
+      // setFormData({
+      //   name: data.name,
+      //   type: data.type,
+      //   description: data.description,
+      //   durationMonths: data.durationMonths,
+      //   syllabus: data.syllabus,
+      //   actualPrice: data.actualPrice,
+      //   discountedPrice: data.discountedPrice,
+      //   status: data.status,
+      // });
+
       setFormData({
         name: data.name,
         type: data.type,
@@ -40,6 +52,7 @@ function EditCourseModal({ courseId, onClose, onSuccess }) {
         durationMonths: data.durationMonths,
         syllabus: data.syllabus,
         actualPrice: data.actualPrice,
+        registrationFee: data.registrationFee,
         discountedPrice: data.discountedPrice,
         status: data.status,
       });
@@ -70,15 +83,20 @@ function EditCourseModal({ courseId, onClose, onSuccess }) {
       //   discountedPrice: Number(formData.discountedPrice),
       // };
 
-      const {
-        type,
-        ...rest
-      } = formData;
+      const { type, ...rest } = formData;
+
+      // const payload = {
+      //   ...rest,
+      //   durationMonths: Number(formData.durationMonths),
+      //   actualPrice: Number(formData.actualPrice),
+      //   discountedPrice: Number(formData.discountedPrice),
+      // };
 
       const payload = {
         ...rest,
         durationMonths: Number(formData.durationMonths),
         actualPrice: Number(formData.actualPrice),
+        registrationFee: Number(formData.registrationFee),
         discountedPrice: Number(formData.discountedPrice),
       };
 
@@ -117,10 +135,7 @@ function EditCourseModal({ courseId, onClose, onSuccess }) {
               <p>Update course information</p>
             </div>
 
-            <button
-              className="btn-close"
-              onClick={onClose}
-            />
+            <button className="btn-close" onClick={onClose} />
           </div>
 
           <form onSubmit={handleSubmit}>
@@ -206,6 +221,18 @@ function EditCourseModal({ courseId, onClose, onSuccess }) {
                   </div>
 
                   <div className="col-md-4 mb-3">
+                    <label>Registration Fee</label>
+
+                    <input
+                      className="form-control"
+                      type="number"
+                      name="registrationFee"
+                      value={formData.registrationFee}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div className="col-md-4 mb-3">
                     <label>Discount Price</label>
 
                     <input
@@ -268,11 +295,7 @@ function EditCourseModal({ courseId, onClose, onSuccess }) {
                 Cancel
               </button>
 
-              <button
-                type="submit"
-                className="theme-btn"
-                disabled={saving}
-              >
+              <button type="submit" className="theme-btn" disabled={saving}>
                 {saving ? "Updating..." : "Update Course"}
               </button>
             </div>

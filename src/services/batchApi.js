@@ -60,7 +60,12 @@ export const deleteBatch = (id) => {
   return api.delete(`/batch/${id}`);
 };
 
-
+// ==============================
+// REMOVE STUDENT FROM BATCH
+// ==============================
+export const removeStudentFromBatch = (batchId, studentId) => {
+  return api.patch(`/batch/${batchId}/remove-student/${studentId}`);
+};
 
 export const getCourseDropdown = () => {
   return api.get("/courses/dropdown");

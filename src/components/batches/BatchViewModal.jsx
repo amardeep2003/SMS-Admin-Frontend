@@ -207,9 +207,16 @@ import toast from "react-hot-toast";
 
 import { getBatchById } from "../../services/batchApi";
 
+import RemoveStudentModal from "./RemoveStudentModal";
+
+
 function BatchViewModal({ batchId, onClose }) {
   const [batch, setBatch] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const [showRemove, setShowRemove] = useState(false);
+
+  const [selectedStudent, setSelectedStudent] = useState(null);
 
   useEffect(() => {
     if (batchId) {
@@ -379,6 +386,7 @@ function BatchViewModal({ batchId, onClose }) {
                             <th>Institute</th>
                             <th>Address</th>
                             <th>Status</th>
+                            <th width="140">Actions</th>
                           </tr>
                         </thead>
 
@@ -406,6 +414,17 @@ function BatchViewModal({ batchId, onClose }) {
                                   {student.status}
                                 </span>
                               </td>
+                              <td>
+                                <button
+                                  className="btn btn-sm btn-outline-danger"
+                                  onClick={() => {
+                                    setSelectedStudent(student);
+                                    setShowRemove(true);
+                                  }}
+                                >
+                                  Remove
+                                </button>
+                              </td>
                             </tr>
                           ))}
                         </tbody>
@@ -422,6 +441,18 @@ function BatchViewModal({ batchId, onClose }) {
           </div>
         </div>
       </div>
+      <RemoveStudentModal
+        show={showRemove}
+        batchId={batchId}
+        student={selectedStudent}
+        onClose={() => {
+          setShowRemove(false);
+          setSelectedStudent(null);
+        }}
+        onSuccess={async () => {
+          await loadBatch();
+        }}
+      />
     </div>
   );
 }
