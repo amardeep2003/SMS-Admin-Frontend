@@ -16,6 +16,7 @@ import Batches from "./pages/Batches";
 import Affiliates from "./pages/Affiliates";
 import Enrollments from "./pages/Enrollments";
 import PublicEnrollment from "./pages/PublicEnrollment";
+import FinancialReports from "./pages/FinancialReports";
 
 function App() {
   return (
@@ -47,6 +48,8 @@ function App() {
           <Route path="/affiliate" element={<Affiliates />} />
 
           <Route path="/enrollments" element={<Enrollments />} />
+          
+          <Route path="/financial-reports" element={<FinancialReports />} />
         </Route>
       </Routes>
     </>

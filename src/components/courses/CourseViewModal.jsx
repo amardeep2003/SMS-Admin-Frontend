@@ -119,7 +119,16 @@ function CourseViewModal({ courseId, onClose }) {
                       )}
                     </p>
                   </div>
+                  <div>
+                    <label>Registration Fee</label>
 
+                    <p>
+                      ₹
+                      {new Intl.NumberFormat("en-IN").format(
+                        course.registrationFee || 0,
+                      )}
+                    </p>
+                  </div>
                   <div>
                     <label>Created Date</label>
 

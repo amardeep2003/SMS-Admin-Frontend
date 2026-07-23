@@ -126,6 +126,8 @@ import PopularCourses from "../components/dashboard/PopularCourses";
 import DashboardLoader from "../components/dashboard/DashboardLoader";
 import WelcomeBanner from "../components/dashboard/WelcomeBanner";
 
+import "../assets/images/css/dashboard.css"
+
 function Dashboard() {
   const admin = JSON.parse(localStorage.getItem("admin"));
 

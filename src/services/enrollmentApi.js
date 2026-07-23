@@ -31,3 +31,19 @@ export const getCourseDropdown = () => {
 export const getAffiliateDropdown = () => {
   return api.get("/affiliate/dropdown");
 };
+
+// ==============================
+// GET SINGLE ENROLLMENT
+// ==============================
+
+export const getEnrollmentById = (id) => {
+  return api.get(`/enrollments/${id}`);
+};
+
+// ==============================
+// ADD PAYMENT
+// ==============================
+
+export const addEnrollmentPayment = (enrollmentId, data) => {
+  return api.post(`/enrollments/${enrollmentId}/payment`, data);
+};

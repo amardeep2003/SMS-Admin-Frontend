@@ -89,7 +89,7 @@ function StudentViewModal({ studentId, onClose }) {
 
                 {/* OTHER DETAILS */}
 
-                <div className="student-detail-box">
+                {/* <div className="student-detail-box">
                   <div>
                     <label>Institute</label>
 
@@ -112,6 +112,68 @@ function StudentViewModal({ studentId, onClose }) {
                     <label>Joined Date</label>
 
                     <p>{new Date(student.createdAt).toLocaleDateString()}</p>
+                  </div>
+                </div> */}
+
+                <div className="student-detail-box">
+                  <div>
+                    <label>Institute</label>
+
+                    <p>{student.instituteName || "-"}</p>
+                  </div>
+
+                  <div>
+                    <label>Branch</label>
+
+                    <p>{student.branch || "-"}</p>
+                  </div>
+
+                  <div>
+                    <label>Semester</label>
+
+                    <p>{student.semester || "-"}</p>
+                  </div>
+
+                  <div>
+                    <label>Passing Year</label>
+
+                    <p>{student.passingYear || "-"}</p>
+                  </div>
+
+                  <div>
+                    <label>Gender</label>
+
+                    <p>{student.gender || "-"}</p>
+                  </div>
+
+                  <div>
+                    <label>Date of Birth</label>
+
+                    <p>
+                      {student.dob
+                        ? new Date(student.dob).toLocaleDateString("en-IN")
+                        : "-"}
+                    </p>
+                  </div>
+
+                  <div>
+                    <label>Address</label>
+
+                    <p>{student.address || "-"}</p>
+                  </div>
+
+                  <div>
+                    <label>Total Courses</label>
+
+                    <p>{student.enrolledCoursesCount}</p>
+                  </div>
+
+                  <div>
+                    <label>Joined Date</label>
+
+                    <p>
+                      {new Date(student.createdAt).toLocaleDateString("en-IN")}
+                    </p>
                   </div>
                 </div>
 

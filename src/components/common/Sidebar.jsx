@@ -1,106 +1,98 @@
 import { NavLink } from "react-router-dom";
 import {
-    FaTachometerAlt,
-    FaUserGraduate,
-    FaBook,
-    FaLayerGroup,
-    FaClipboardList,
-    FaHandshake,
-    FaChalkboardTeacher,
-    FaSignOutAlt,
+  FaTachometerAlt,
+  FaUserGraduate,
+  FaBook,
+  FaLayerGroup,
+  FaClipboardList,
+  FaHandshake,
+  FaChalkboardTeacher,
+  FaSignOutAlt,
+  FaFileInvoiceDollar,
 } from "react-icons/fa";
 
 import logo from "../../assets/images/logicgyan.webp";
 
 const menus = [
-    {
-        name: "Dashboard",
-        path: "/dashboard",
-        icon: <FaTachometerAlt />,
-    },
-    {
-        name: "Students",
-        path: "/students",
-        icon: <FaUserGraduate />,
-    },
-    {
-        name: "Courses",
-        path: "/courses",
-        icon: <FaBook />,
-    },
-    {
-        name: "Batches",
-        path: "/batches",
-        icon: <FaLayerGroup />,
-    },
-    {
-        name: "Enrollments",
-        path: "/enrollments",
-        icon: <FaClipboardList />,
-    },
-    {
-        name: "Affiliate",
-        path: "/affiliate",
-        icon: <FaHandshake />,
-    },
-    {
-        name: "Trainers",
-        path: "/trainers",
-        icon: <FaChalkboardTeacher />,
-    },
+  {
+    name: "Dashboard",
+    path: "/dashboard",
+    icon: <FaTachometerAlt />,
+  },
+  {
+    name: "Students",
+    path: "/students",
+    icon: <FaUserGraduate />,
+  },
+  {
+    name: "Courses",
+    path: "/courses",
+    icon: <FaBook />,
+  },
+  {
+    name: "Batches",
+    path: "/batches",
+    icon: <FaLayerGroup />,
+  },
+  {
+    name: "Enrollments",
+    path: "/enrollments",
+    icon: <FaClipboardList />,
+  },
+  {
+    name: "Financial Reports",
+    path: "/financial-reports",
+    icon: <FaFileInvoiceDollar />,
+  },
+  {
+    name: "Affiliate",
+    path: "/affiliate",
+    icon: <FaHandshake />,
+  },
+  {
+    name: "Trainers",
+    path: "/trainers",
+    icon: <FaChalkboardTeacher />,
+  },
 ];
 
 function Sidebar() {
-    const logout = () => {
-        localStorage.clear();
-        window.location.href = "/";
-    };
+  const logout = () => {
+    localStorage.clear();
+    window.location.href = "/";
+  };
 
-    return (
-        <aside className="sidebar">
+  return (
+    <aside className="sidebar">
+      <div className="text-center py-4 border-bottom">
+        <img src={logo} alt="LogicGyan" className="logo img-fluid" />
+      </div>
 
-            <div className="text-center py-4 border-bottom">
+      <div className="mt-4">
+        {menus.map((menu) => (
+          <NavLink
+            key={menu.path}
+            to={menu.path}
+            style={{ textDecoration: "none" }}
+            className={({ isActive }) =>
+              `sidebar-link ${isActive ? "active" : ""}`
+            }
+          >
+            <span className="icon">{menu.icon}</span>
 
-                <img
-                    src={logo}
-                    alt="LogicGyan"
-                    className="logo img-fluid"
-                />
+            <span>{menu.name}</span>
+          </NavLink>
+        ))}
+      </div>
 
-            </div>
-
-            <div className="mt-4">
-
-                {menus.map((menu) => (
-                    <NavLink
-                        key={menu.path}
-                        to={menu.path}
-                        className={({ isActive }) =>
-                            `sidebar-link ${isActive ? "active" : ""}`
-                        }
-                    >
-                        <span className="icon">{menu.icon}</span>
-
-                        <span>{menu.name}</span>
-                    </NavLink>
-                ))}
-
-            </div>
-
-            <div className="mt-auto p-3">
-
-                <button
-                    className="logout-btn w-100"
-                    onClick={logout}
-                >
-                    <FaSignOutAlt />
-                    Logout
-                </button>
-
-            </div>
-
-        </aside>
-    );
+      <div className="mt-auto p-3">
+        <button className="logout-btn w-100" onClick={logout}>
+          <FaSignOutAlt />
+          Logout
+        </button>
+      </div>
+    </aside>
+  );
 }
 
 export default Sidebar;

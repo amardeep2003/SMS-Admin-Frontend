@@ -74,3 +74,12 @@ export const getCourseDropdown = () => {
 export const getTrainerDropdown = () => {
   return api.get("/trainers/dropdown");
 };
+
+
+// ==============================
+// BATCH DROPDOWN
+// ==============================
+
+export const getBatchDropdown = () => {
+  return api.get("/batch/dropdown");
+};
