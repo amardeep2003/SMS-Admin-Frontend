@@ -5,6 +5,12 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
    build: {
-    cssMinify: 'esbuild', 
+    // Ye lightningcss ki jagah purana tareeka use karega jo error nahi dega
+    cssMinify: true 
   },
+  // Agar phir bhi error aaye, toh ye add karein:
+  css: {
+    transformer: 'postcss',
+    minify: 'esbuild' // Iske liye Solution 2 wala npm install zaroori hai
+  }
 })
