@@ -23,7 +23,7 @@ import api from "../api/axios";
 // =======================================
 
 export const getCourseDropdown = () => {
-  return api.get("/courses/dropdown");
+  return api.get("/courses/public/dropdown");
 };
 
 // =======================================
